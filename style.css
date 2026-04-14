@@ -1,1 +1,114 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1f1c2e, #6863b2);
+  font-family: 'Segoe UI';
+}
 
+/* PHONE FRAME */
+.phone {
+  width: 360px;
+  height: 640px;
+  background: black;
+  border-radius: 30px;
+  padding: 10px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  overflow: hidden;
+  position: relative;
+}
+
+/* APP CONTAINER */
+.container {
+  background: linear-gradient(135deg, #263268, #0e0433);
+  height: 100%;
+  overflow-y: auto;
+  border-radius: 20px;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 12px;
+  font-size: 18px;
+  background: rgba(0,0,0,0.3);
+  color: white;
+}
+
+/* SCREENS */
+.screen {
+  display: none;
+  padding: 15px;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* INPUT */
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: none;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(45deg, #3dc9f8, #507e9a);
+  color: white;
+  cursor: pointer;
+}
+
+/* LIST */
+li {
+  background: rgba(255, 255, 255, 0.742);
+  margin: 5px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* ALERT */
+.alert {
+  padding: 8px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.warning { background: #2a86c3; }
+.tip { background: #5a49ae; color: black; }
+
+#alertBox {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #00ffcc;
+  color: black;
+  padding: 8px;
+  border-radius: 10px;
+  display: none;
+}
+
+/* FLOW */
+.node {
+  fill: white;
+}
+
+.line {
+  stroke: #00ffcc;
+  stroke-width: 3;
+  stroke-dasharray: 5;
+  animation: move 1s linear infinite;
+}
+
+@keyframes move {
+  to { stroke-dashoffset: -10; }
+}
