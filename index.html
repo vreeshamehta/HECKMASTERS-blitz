@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FlowPay</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="scripts.js"></script>
+</head>
+<body>
 
+<div class="phone">
+
+  <div id="alertBox"></div>
+
+  <div class="header">FLOWPAY</div>
+
+  <div class="container">
+
+    <!-- SCREEN 1 -->
+    <div class="screen active" id="screen1">
+      <h2>➕ Add Expense</h2>
+
+      <button onclick="loadMockTransactions()">Add Mock Data</button>
+      <div id="warning" class="alert warning">⚠️ No issues</div>
+      <div id="tip" class="alert tip">💡 Tip will appear</div>
+
+      <input id="from" placeholder="Payer">
+      <input id="to" placeholder="Payee">
+      <input id="amount" type="number" placeholder="Amount">
+        <select id="category">
+            <option value="Food" selected>🍔 Food</option>
+            <option value="Travel">🚗 Travel</option>
+            <option value="Shopping">🛍️ Shopping</option>
+            <option value="Bills">💡 Bills</option>
+            <option value="Other">📦 Other</option>
+        </select>
+      <button onclick="addTransaction()">Add</button>
+      <button onclick="nextScreen(2)">Next ➡️</button>
+      <button onclick="resetAll()">Reset 🛑</button>
+    </div>
+
+    <!-- SCREEN 2 -->
+    <div class="screen" id="screen2">
+      <h2>⚡ Strategy</h2>
+
+      <button onclick="setStrategy('fast')">Fast</button>
+      <button onclick="setStrategy('min')">Min Cash</button>
+
+      <button onclick="calculate()">Optimize</button>
+
+      <h3>Before</h3>
+      <ul id="before"></ul>
+
+      <h3>After</h3>
+      <ul id="result"></ul>
+
+      <button onclick="prevScreen(1)">⬅️ Back</button>
+      <button onclick="nextScreen(3)">Next ➡️</button>
+      <button onclick="resetAll()">Reset 🛑</button>
+    </div>
+
+    <!-- SCREEN 3 -->
+    <div class="screen" id="screen3" style="color: white;">
+      <h2>🔄 Flow + Chain</h2>
+
+      <p id="chain"></p>
+      <svg id="flowSvg" width="260" height="260"></svg>
+
+      <button onclick="prevScreen(2)">⬅️ Back</button>
+      <button onclick="nextScreen(4)">Next ➡️</button>
+      <button onclick="resetAll()">Reset 🛑</button>
+    </div>
+
+    <!-- SCREEN 4 -->
+    <div class="screen" id="screen4" style="color: white;">
+      <h2>🤖 AI Insights</h2>
+
+      <p id="ai"></p>
+      <p id="suggestion"></p>
+      <p id="insights"></p>
+
+      <canvas id="chart"></canvas>
+
+      <button onclick="prevScreen(3)">⬅️ Back</button>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
