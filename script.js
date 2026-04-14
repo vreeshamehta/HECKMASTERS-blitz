@@ -175,8 +175,9 @@ function drawChart(balances){
     data:{
       labels:Object.keys(balances),
       datasets:[{data:Object.values(balances)}]
-    }
-  });
+    },
+    options: {plugins: {legend: {labels: {color: "white" }}}}}
+  );
 }
 
 // FLOW
